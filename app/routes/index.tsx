@@ -6,6 +6,10 @@ export default function Index() {
     console.log("Hi I'm Daisy! This is global: ", global);
 
     console.log("Hi, I'm Peach, this is self: ", self);
+
+    console.log("Exports: ", typeof exports);
+    console.log("Module: ", typeof module);
+    console.log("Global window: ", global.window);
      
   return (
     <div className="app flex-row">
