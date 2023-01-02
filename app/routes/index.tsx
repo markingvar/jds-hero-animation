@@ -11,7 +11,12 @@ export default function Index() {
 
 function SuperDuper() {
     console.log({global});
-    let {to} = useGsap();
+    let gsapTo = function () {};
+    useLayoutEffect(() => {
+        let {to} = useGsap();
+
+        gsapTo = to;
+    }, []);
     const [tl, setTl] = useState();
 
     const onEnter = ({ currentTarget }) => {
