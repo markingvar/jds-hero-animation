@@ -1,3 +1,5 @@
 import gsap from 'gsap';
 
-export { gsap };
+export function useGsap() {
+  return gsap;
+}

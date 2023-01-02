@@ -1,5 +1,5 @@
 import {useState, useRef, useLayoutEffect} from 'react';
-import {gsap} from '~/utils/gsap';
+import {useGsap} from '~/utils/gsap';
 
 export default function Index() {
      
@@ -10,6 +10,7 @@ export default function Index() {
 
 
 function SuperDuper() {
+    let gsap = useGsap();
     const [tl, setTl] = useState();
 
     const onEnter = ({ currentTarget }) => {
