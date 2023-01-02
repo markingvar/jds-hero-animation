@@ -1,6 +1,7 @@
 import {useState, useRef, useLayoutEffect} from 'react';
 
 export default function Index() {
+    console.log({global, self});
      
   return (
     <div className="app flex-row">
@@ -9,7 +10,6 @@ export default function Index() {
 
 
 function SuperDuper() {
-    console.log({global});
   return (
           <div className="box" >
           Hover Me
