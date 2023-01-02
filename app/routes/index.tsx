@@ -1,5 +1,4 @@
 import {useState, useRef, useLayoutEffect} from 'react';
-import {useGsap} from '~/utils/gsap';
 
 export default function Index() {
      
@@ -10,18 +9,9 @@ export default function Index() {
 
 
 function SuperDuper() {
-    let {to} = useGsap();
-    const [tl, setTl] = useState();
-
-    const onEnter = ({ currentTarget }) => {
-        to(currentTarget, { backgroundColor: "#e77614", scale: 1.2 });
-    };
-
-    const onLeave = ({ currentTarget }) => {
-        to(currentTarget, { backgroundColor: "#28a92b", scale: 1 });
-    };
+    console.log({global});
   return (
-          <div className="box" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          <div className="box" >
           Hover Me
           </div>
 
