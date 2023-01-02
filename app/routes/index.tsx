@@ -1,5 +1,5 @@
 import {useState, useRef, useLayoutEffect} from 'react';
-import gsap from 'gsap';
+import {gsap} from '~/utils/gsap';
 
 export default function Index() {
      
