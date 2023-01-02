@@ -1,32 +1,21 @@
+import {useState, useRef, useLayoutEffect} from 'react';
+import gsap from 'gsap';
+
 export default function Index() {
+const [tl, setTl] = useState();
+
+const onEnter = ({ currentTarget }) => {
+    gsap.to(currentTarget, { backgroundColor: "#e77614", scale: 1.2 });
+  };
+  
+  const onLeave = ({ currentTarget }) => {
+    gsap.to(currentTarget, { backgroundColor: "#28a92b", scale: 1 });
+  };
+     
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
-}
+    <div className="app flex-row">
+      <div className="box" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+        Hover Me
+      </div>
+    </div>  );}
+
