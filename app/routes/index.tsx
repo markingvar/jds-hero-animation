@@ -1,15 +1,7 @@
 import {useState, useRef, useLayoutEffect} from 'react';
+import {useGsap} from '~/utils/gsap';
 
 export default function Index() {
-    console.log({global: global, self: self});
-
-    console.log("Hi I'm Daisy! This is global: ", global);
-
-    console.log("Hi, I'm Peach, this is self: ", self);
-
-    console.log("Exports: ", typeof exports);
-    console.log("Module: ", typeof module);
-    console.log("Global window: ", global.window);
      
   return (
     <div className="app flex-row">
@@ -18,8 +10,19 @@ export default function Index() {
 
 
 function SuperDuper() {
+    console.log({global});
+    let {to} = useGsap();
+    const [tl, setTl] = useState();
+
+    const onEnter = ({ currentTarget }) => {
+        to(currentTarget, { backgroundColor: "#e77614", scale: 1.2 });
+    };
+
+    const onLeave = ({ currentTarget }) => {
+        to(currentTarget, { backgroundColor: "#28a92b", scale: 1 });
+    };
   return (
-          <div className="box" >
+          <div className="box" onMouseEnter={onEnter} onMouseLeave={onLeave}>
           Hover Me
           </div>
 
